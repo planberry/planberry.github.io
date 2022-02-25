@@ -49,6 +49,46 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Planberry\nEffective time management`
+  String get main_title {
+    return Intl.message(
+      'Planberry\nEffective time management',
+      name: 'main_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The application allows you to effectively manage time`
+  String get main_subtitle {
+    return Intl.message(
+      'The application allows you to effectively manage time',
+      name: 'main_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Тёмная`
+  String get theme_dark {
+    return Intl.message(
+      'Тёмная',
+      name: 'theme_dark',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Светлая`
+  String get theme_light {
+    return Intl.message(
+      'Светлая',
+      name: 'theme_light',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

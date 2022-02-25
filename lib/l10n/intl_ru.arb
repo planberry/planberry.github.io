@@ -1,1 +1,7 @@
-{}
+{
+  "main_title": "Planberry\nEffective time management",
+  "main_subtitle": "The application allows you to effectively manage time",
+
+  "theme_dark": "Тёмная",
+  "theme_light": "Светлая"
+}

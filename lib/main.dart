@@ -1,25 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'modules/common-core/constants.dart';
+import 'generated/l10n.dart';
+import 'modules/app-core/app_bloc/app_bloc.dart';
+import 'modules/app-core/app_bloc/app_bloc_state.dart';
 import 'modules/feature-main-screen/home/home.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Web',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: kPrimaryColor,
-        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(lazy: false, create: (_) => AppBloc()..init()),
+      ],
+      child: BlocBuilder<AppBloc, AppState>(
+        builder: (BuildContext context, appState) {
+          if (appState is AppStateData) {
+            return MaterialApp(
+              title: 'Flutter Web',
+              debugShowCheckedModeBanner: false,
+              localizationsDelegates: const [
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+                S.delegate
+              ],
+              supportedLocales: S.delegate.supportedLocales,
+              locale: Locale(appState.localeCode),
+              theme: appState.galleryThemeManager.currentThemeData(context),
+              home: const HomeScreen(),
+            );
+          } else {
+            return Container();
+          }
+        },
       ),
-      home: const HomeScreen(),
     );
   }
 }

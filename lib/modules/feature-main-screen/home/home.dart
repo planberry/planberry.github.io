@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
           constraints: BoxConstraints(minHeight: size.height),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               PreferredSize(
                 preferredSize: const Size.fromHeight(70),
@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
               Container(
-                padding: EdgeInsets.only(bottom: 60),
+                padding: const EdgeInsets.only(bottom: 0),
                 child: const Footer(),
               ),
             ],

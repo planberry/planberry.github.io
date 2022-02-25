@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../common-core/constants.dart';
+import '../../../../generated/l10n.dart';
 import '../../../common-core/responsive.dart';
-import '../../../common-core/widgets/components/main_button.dart';
 
 class MainTop extends StatelessWidget {
   const MainTop({
@@ -40,7 +39,7 @@ class MainTop extends StatelessWidget {
                             child: _buildImage1(context)),
                       ),
                     Text(
-                      'Planberry\nEffective time management',
+                      S.of(context).main_title,
                       textAlign: isMobile(context)
                           ? TextAlign.center
                           : TextAlign.start,
@@ -51,7 +50,7 @@ class MainTop extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      'The application allows you to effectively manage time',
+                      S.of(context).main_subtitle,
                       textAlign: isMobile(context)
                           ? TextAlign.center
                           : TextAlign.start,
@@ -69,7 +68,6 @@ class MainTop extends StatelessWidget {
                           "assets/images/get_on_google.png",
                         ),
                         const SizedBox(width: 10),
-
                         _buildStoreButton(
                           context,
                           "assets/images/get_on_appstore.png",
@@ -82,20 +80,23 @@ class MainTop extends StatelessWidget {
             ),
             if (isDesktop(context) || isTab(context))
               Expanded(
-                child: SizedBox(
-                    height: size.height * 0.7,
-                    width: size.height * 0.7,
-                    child: _buildImage1(context)),
+                child: Center(
+                  child: SizedBox(
+                    width: 500,
+                    child: _buildImage1(context),
+                  ),
+                ),
               )
           ],
         ));
   }
 
-  _buildImage1(BuildContext context) {
+  Widget _buildImage1(BuildContext context) {
     return Image.asset(
       "assets/images/screens.png",
-      fit: BoxFit.fitHeight,
-      height: 14,
+      fit: (isDesktop(context) || isTab(context))
+          ? BoxFit.fitWidth
+          : BoxFit.fitHeight,
     );
   }
 
