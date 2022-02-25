@@ -50,20 +50,20 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Planberry\nEffective time management`
+  /// `Planberry\nЭффективное управление временем`
   String get main_title {
     return Intl.message(
-      'Planberry\nEffective time management',
+      'Planberry\nЭффективное управление временем',
       name: 'main_title',
       desc: '',
       args: [],
     );
   }
 
-  /// `The application allows you to effectively manage time`
+  /// `Приложение позволяет эффективно управлять временем`
   String get main_subtitle {
     return Intl.message(
-      'The application allows you to effectively manage time',
+      'Приложение позволяет эффективно управлять временем',
       name: 'main_subtitle',
       desc: '',
       args: [],
@@ -85,6 +85,16 @@ class S {
     return Intl.message(
       'Светлая',
       name: 'theme_light',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Русский`
+  String get lang_desc {
+    return Intl.message(
+      'Русский',
+      name: 'lang_desc',
       desc: '',
       args: [],
     );

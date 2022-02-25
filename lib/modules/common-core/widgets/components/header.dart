@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../generated/l10n.dart';
+import '../../../app-core/app_bloc/app_bloc.dart';
 import '../../responsive.dart';
 import 'menu_item.dart';
 
@@ -42,12 +45,10 @@ class Header extends StatelessWidget {
                   tapEvent: () {},
                 ),
                 NavItem(
-                  title: 'Login',
-                  tapEvent: () {},
-                ),
-                NavItem(
-                  title: 'Shop',
-                  tapEvent: () {},
+                  title: S.of(context).lang_desc,
+                  tapEvent: () {
+                    BlocProvider.of<AppBloc>(context).swapLanguage();
+                  },
                 ),
               ],
             ),

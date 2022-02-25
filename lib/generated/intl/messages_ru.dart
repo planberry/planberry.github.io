@@ -22,10 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "lang_desc": MessageLookupByLibrary.simpleMessage("Русский"),
         "main_subtitle": MessageLookupByLibrary.simpleMessage(
-            "The application allows you to effectively manage time"),
+            "Приложение позволяет эффективно управлять временем"),
         "main_title": MessageLookupByLibrary.simpleMessage(
-            "Planberry\nEffective time management"),
+            "Planberry\nЭффективное управление временем"),
         "theme_dark": MessageLookupByLibrary.simpleMessage("Тёмная"),
         "theme_light": MessageLookupByLibrary.simpleMessage("Светлая")
       };

@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../generated/l10n.dart';
+import '../../../app-core/app_bloc/app_bloc.dart';
 import 'menu_item.dart';
 
 class SideMenu extends StatelessWidget {
+
+  const SideMenu({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,8 +48,10 @@ class SideMenu extends StatelessWidget {
               SizedBox(height: 10),
               
               NavItem(
-                title: 'Shop',
-                tapEvent: () {},
+                title: S.of(context).lang_desc,
+                tapEvent: () {
+                  BlocProvider.of<AppBloc>(context).swapLanguage();
+                },
               ),
             ],
           ),

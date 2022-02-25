@@ -72,4 +72,12 @@ class AppBloc extends Cubit<AppState> {
   AppStateData getDataState() {
     return (state as AppStateData);
   }
+
+  void swapLanguage() {
+    if (getDataState().localeCode == "ru"){
+      setLanguage("en");
+    }else{
+      setLanguage("ru");
+    }
+  }
 }
