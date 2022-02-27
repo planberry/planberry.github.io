@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../app-core/app_bloc/app_bloc.dart';
+import '../../../utils/launch_utils.dart';
 import '../../constants.dart';
 import '../../responsive.dart';
 
@@ -48,7 +49,9 @@ class Header extends StatelessWidget {
 List<Widget> menuItems(BuildContext context) => [
       NavItem(
         title: S.of(context).contacts,
-        tapEvent: () {},
+        tapEvent: () {
+          launchURL("https://t.me/planberry");
+        },
       ),
       NavItem(
         title: S.of(context).lang_desc,
