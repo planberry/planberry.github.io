@@ -44,7 +44,7 @@ class MainTop extends StatelessWidget {
                           ? TextAlign.center
                           : TextAlign.start,
                       style: TextStyle(
-                        fontSize: isDesktop(context) ? 64 : 32,
+                        fontSize: isDesktop(context) ? 48 : 32,
                         fontWeight: FontWeight.w800,
                       ),
                     ),
@@ -55,7 +55,7 @@ class MainTop extends StatelessWidget {
                           ? TextAlign.center
                           : TextAlign.start,
                       style: TextStyle(
-                        fontSize: isDesktop(context) ? 36 : 18,
+                        fontSize: isDesktop(context) ? 26 : 18,
                         fontWeight: FontWeight.w300,
                       ),
                     ),

@@ -50,6 +50,76 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Открой все возможности приложения`
+  String get review_title {
+    return Intl.message(
+      'Открой все возможности приложения',
+      name: 'review_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Креативный дизайн`
+  String get creative_design {
+    return Intl.message(
+      'Креативный дизайн',
+      name: 'creative_design',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Наглядная статистика`
+  String get visual_statistics {
+    return Intl.message(
+      'Наглядная статистика',
+      name: 'visual_statistics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Гибкая настройка`
+  String get flexible_setup {
+    return Intl.message(
+      'Гибкая настройка',
+      name: 'flexible_setup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Быстрая поддержка`
+  String get fast_support {
+    return Intl.message(
+      'Быстрая поддержка',
+      name: 'fast_support',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Все права сохранены`
+  String get copyright {
+    return Intl.message(
+      'Все права сохранены',
+      name: 'copyright',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Контакты`
+  String get contacts {
+    return Intl.message(
+      'Контакты',
+      name: 'contacts',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Planberry\nЭффективное управление временем`
   String get main_title {
     return Intl.message(

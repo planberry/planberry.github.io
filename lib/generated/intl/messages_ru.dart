@@ -22,12 +22,25 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "contacts": MessageLookupByLibrary.simpleMessage("Контакты"),
+        "copyright":
+            MessageLookupByLibrary.simpleMessage("Все права сохранены"),
+        "creative_design":
+            MessageLookupByLibrary.simpleMessage("Креативный дизайн"),
+        "fast_support":
+            MessageLookupByLibrary.simpleMessage("Быстрая поддержка"),
+        "flexible_setup":
+            MessageLookupByLibrary.simpleMessage("Гибкая настройка"),
         "lang_desc": MessageLookupByLibrary.simpleMessage("Русский"),
         "main_subtitle": MessageLookupByLibrary.simpleMessage(
             "Приложение позволяет эффективно управлять временем"),
         "main_title": MessageLookupByLibrary.simpleMessage(
             "Planberry\nЭффективное управление временем"),
+        "review_title": MessageLookupByLibrary.simpleMessage(
+            "Открой все возможности приложения"),
         "theme_dark": MessageLookupByLibrary.simpleMessage("Тёмная"),
-        "theme_light": MessageLookupByLibrary.simpleMessage("Светлая")
+        "theme_light": MessageLookupByLibrary.simpleMessage("Светлая"),
+        "visual_statistics":
+            MessageLookupByLibrary.simpleMessage("Наглядная статистика")
       };
 }

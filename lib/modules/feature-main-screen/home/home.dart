@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_planberry_site/modules/feature-main-screen/home/widgets/main_top.dart';
+import 'package:flutter_planberry_site/modules/feature-main-screen/home/widgets/second_main_row.dart';
+import 'package:flutter_planberry_site/modules/feature-main-screen/home/widgets/first_main_row.dart';
 
 import '../../common-core/constants.dart';
 import '../../common-core/widgets/components/footer.dart';
 import '../../common-core/widgets/components/header.dart';
-import '../../common-core/widgets/components/side_menu.dart';
 import '../../common-core/widgets/curve/clippers.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       endDrawer: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 300),
-        child: SideMenu(),
+        child: const SideMenu(),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -52,6 +52,7 @@ class HomeScreen extends StatelessWidget {
                   const MainTop(),
                 ],
               ),
+              const SecondMainRow(),
               Container(
                 padding: const EdgeInsets.only(bottom: 0),
                 child: const Footer(),

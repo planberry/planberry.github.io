@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         builder: (BuildContext context, appState) {
           if (appState is AppStateData) {
             return MaterialApp(
-              title: 'Flutter Web',
+              title: 'Planberry App',
               debugShowCheckedModeBanner: false,
               localizationsDelegates: const [
                 GlobalMaterialLocalizations.delegate,
