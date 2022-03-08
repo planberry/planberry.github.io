@@ -120,10 +120,10 @@ class S {
     );
   }
 
-  /// `Planberry\nЭффективное управление временем`
+  /// `Эффективное управление временем`
   String get main_title {
     return Intl.message(
-      'Planberry\nЭффективное управление временем',
+      'Эффективное управление временем',
       name: 'main_title',
       desc: '',
       args: [],

@@ -32,8 +32,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "lang_desc": MessageLookupByLibrary.simpleMessage("English"),
         "main_subtitle": MessageLookupByLibrary.simpleMessage(
             "The application allows you to effectively manage time"),
-        "main_title": MessageLookupByLibrary.simpleMessage(
-            "Planberry\nEffective time management"),
+        "main_title":
+            MessageLookupByLibrary.simpleMessage("Effective time management"),
         "review_title": MessageLookupByLibrary.simpleMessage(
             "Discover all the features of the app"),
         "theme_dark": MessageLookupByLibrary.simpleMessage("Dark"),

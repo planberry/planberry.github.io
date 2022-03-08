@@ -35,7 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "main_subtitle": MessageLookupByLibrary.simpleMessage(
             "Приложение позволяет эффективно управлять временем"),
         "main_title": MessageLookupByLibrary.simpleMessage(
-            "Planberry\nЭффективное управление временем"),
+            "Эффективное управление временем"),
         "review_title": MessageLookupByLibrary.simpleMessage(
             "Открой все возможности приложения"),
         "theme_dark": MessageLookupByLibrary.simpleMessage("Тёмная"),

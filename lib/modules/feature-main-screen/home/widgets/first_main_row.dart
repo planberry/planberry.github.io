@@ -1,3 +1,4 @@
+import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
@@ -44,22 +45,22 @@ class MainTop extends StatelessWidget {
                           ? TextAlign.center
                           : TextAlign.start,
                       style: TextStyle(
-                        fontSize: isDesktop(context) ? 48 : 32,
+                        fontSize: isDesktop(context) ? 38 : 32,
                         fontWeight: FontWeight.w800,
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 20),
                     Text(
-                      S.of(context).main_subtitle,
+                      "Управление временем — целая наука. Тайм - менеджмент — это техники и методы для управления временем. Это самоорганизация и управление собой. Тайм-менеджмент помогает человеку или компании планировать время и экономить ресурсы. Попробуй планировать вместе с приложением",
                       textAlign: isMobile(context)
                           ? TextAlign.center
                           : TextAlign.start,
                       style: TextStyle(
-                        fontSize: isDesktop(context) ? 26 : 18,
+                        fontSize: isDesktop(context) ? 20 : 18,
                         fontWeight: FontWeight.w300,
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 30),
                     Wrap(
                       runSpacing: 10,
                       children: <Widget>[
@@ -82,7 +83,7 @@ class MainTop extends StatelessWidget {
               Expanded(
                 child: Center(
                   child: SizedBox(
-                    width: 500,
+                    width: 350,
                     child: _buildImage1(context),
                   ),
                 ),
@@ -92,6 +93,32 @@ class MainTop extends StatelessWidget {
   }
 
   Widget _buildImage1(BuildContext context) {
+    return AnimateIfVisible(
+      key: const Key('_buildImage1'),
+      duration: Duration(milliseconds: 500),
+      builder: (
+          BuildContext context,
+          Animation<double> animation,
+          ) =>
+          SlideTransition(
+            position: Tween<Offset>(
+              begin: Offset(0, 0.1),
+              end: Offset.zero,
+            ).animate(animation),
+            child: FadeTransition(
+              opacity: Tween<double>(
+                begin: 0,
+                end: 1,
+              ).animate(animation),
+              child: Image.asset(
+                "assets/images/screens.png",
+                fit: (isDesktop(context) || isTab(context))
+                    ? BoxFit.fitWidth
+                    : BoxFit.fitHeight,
+              ),
+            ),
+          ),
+    );
     return Image.asset(
       "assets/images/screens.png",
       fit: (isDesktop(context) || isTab(context))

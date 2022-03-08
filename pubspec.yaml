@@ -46,6 +46,8 @@ dependencies:
 
   url_launcher: ^6.0.20
 
+  auto_animated: ^3.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

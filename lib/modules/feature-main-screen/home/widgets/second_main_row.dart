@@ -25,6 +25,15 @@ class SecondMainRow extends StatelessWidget {
               fontWeight: FontWeight.w800,
             ),
           ),
+          const SizedBox(height: 2),
+          Text(
+            "Жизнь станет проще с нашим приложением",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: isDesktop(context) ? 20 : 16,
+              fontWeight: FontWeight.w300,
+            ),
+          ),
           const SizedBox(height: 36),
           Wrap(
             alignment: WrapAlignment.center,
@@ -34,18 +43,22 @@ class SecondMainRow extends StatelessWidget {
               ItemFuncView(
                 icon: _buildMatIcon(context, Icons.edit),
                 title: S.of(context).creative_design,
+                subtitle: "Привлекательный дизайн, который радует глаз. Чистый и минималистичный интерфейс для удобного взаимодействия с пользователем.",
               ),
               ItemFuncView(
                 icon: _buildMatIcon(context, Icons.insert_chart),
                 title: S.of(context).visual_statistics,
+                subtitle: "Смотри, как твои цифры растут в режиме реального времени. Вноси быстрые изменения и смотри на результаты с уверенностью, что делаешь все правильно.",
               ),
               ItemFuncView(
                 icon: _buildMatIcon(context, Icons.settings),
                 title: S.of(context).flexible_setup,
+                subtitle: "Установи свои собственные настройки в соответствии с твоими потребностями. Настрой параметры и установи свои собственные ориентиры для работы.",
               ),
               ItemFuncView(
                 icon: _buildMatIcon(context, Icons.local_phone),
                 title: S.of(context).fast_support,
+                subtitle: "Свяжись с нами в любое время, мы будем рады ответить на все твои вопросы. Быстрые ответы в чате и по электронной почте.",
               ),
             ],
           )
@@ -94,7 +107,7 @@ class ItemFuncView extends StatelessWidget {
   Widget _buildContent(BuildContext context) {
     return Container(
       //color: Colors.greenAccent,
-      width: 400,
+      width: 330,
       //constraints: const BoxConstraints(maxWidth: 400),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 36),
       child: Column(
@@ -107,20 +120,23 @@ class ItemFuncView extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: isDesktop(context) ? 22 : 20,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w700,
               color: const Color(0xff3a3a3a),
             ),
           ),
           const SizedBox(height: 16),
           subtitle.isNotEmpty
-              ? Text(
-                  subtitle,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: isDesktop(context) ? 18 : 14,
-                    fontWeight: FontWeight.w300,
+              ? Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Text(
+                    subtitle,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: isDesktop(context) ? 16 : 16,
+                      fontWeight: FontWeight.w300,
+                    ),
                   ),
-                )
+              )
               : Container(),
         ],
       ),

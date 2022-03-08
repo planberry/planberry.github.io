@@ -103,7 +103,7 @@ class ThemeManager {
         elevation: 0,
         iconTheme: IconThemeData(color: colorNaming.primary),
       ),
-      textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
+      textTheme: GoogleFonts.ralewayTextTheme(Theme.of(context).textTheme),
       canvasColor: colorNaming.background,
       scaffoldBackgroundColor: colorNaming.background,
       highlightColor: Colors.transparent,
