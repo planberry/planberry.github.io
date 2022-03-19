@@ -160,11 +160,21 @@ class S {
     );
   }
 
-  /// `Контакты`
-  String get contacts {
+  /// `Наш канал`
+  String get our_channel {
     return Intl.message(
-      'Контакты',
-      name: 'contacts',
+      'Наш канал',
+      name: 'our_channel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Написать нам`
+  String get our_email {
+    return Intl.message(
+      'Написать нам',
+      name: 'our_email',
       desc: '',
       args: [],
     );

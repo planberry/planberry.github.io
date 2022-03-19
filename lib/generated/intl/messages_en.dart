@@ -22,7 +22,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "contacts": MessageLookupByLibrary.simpleMessage("Contacts"),
         "copyright": MessageLookupByLibrary.simpleMessage("All Right Reserved"),
         "creative_design": MessageLookupByLibrary.simpleMessage("Design"),
         "creative_design_desc": MessageLookupByLibrary.simpleMessage(
@@ -39,6 +38,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "main_subtitle": MessageLookupByLibrary.simpleMessage(
             "Every modern person knows how important it is to learn how to manage your time. Time management helps us save resources, identify our own needs, prioritize, and keep focus on what matters most. Our application was created to help you structure your time and spend it usefully."),
         "main_title": MessageLookupByLibrary.simpleMessage("Manage your time"),
+        "our_channel": MessageLookupByLibrary.simpleMessage("Our channel"),
+        "our_email": MessageLookupByLibrary.simpleMessage("Contact us"),
         "review_subtitle":
             MessageLookupByLibrary.simpleMessage("Manage your time well"),
         "review_title": MessageLookupByLibrary.simpleMessage(

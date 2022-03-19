@@ -48,9 +48,15 @@ class Header extends StatelessWidget {
 
 List<Widget> menuItems(BuildContext context) => [
       NavItem(
-        title: S.of(context).contacts,
+        title: S.of(context).our_channel,
         tapEvent: () {
           launchURL("https://t.me/planberry");
+        },
+      ),
+      NavItem(
+        title: S.of(context).our_email,
+        tapEvent: () {
+          launchEmailSender("planberry.contact.center@gmail.com");
         },
       ),
       NavItem(

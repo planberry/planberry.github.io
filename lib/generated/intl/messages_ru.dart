@@ -22,7 +22,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "contacts": MessageLookupByLibrary.simpleMessage("Контакты"),
         "copyright":
             MessageLookupByLibrary.simpleMessage("Все права сохранены"),
         "creative_design": MessageLookupByLibrary.simpleMessage("Дизайн"),
@@ -40,6 +39,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "main_subtitle": MessageLookupByLibrary.simpleMessage(
             "Каждый современный человек знает, как важно научиться управлять своим временем. Тайм-менеджмент помогает нам экономить ресурсы, определять собственные потребности, расставлять приоритеты, сохранять фокус на самом важном. Наше приложение создано для того, чтобы помочь структурировать время и провести его с пользой."),
         "main_title": MessageLookupByLibrary.simpleMessage("Управляй временем"),
+        "our_channel": MessageLookupByLibrary.simpleMessage("Наш канал"),
+        "our_email": MessageLookupByLibrary.simpleMessage("Написать нам"),
         "review_subtitle": MessageLookupByLibrary.simpleMessage(
             "Управляй временем качественно"),
         "review_title": MessageLookupByLibrary.simpleMessage(
