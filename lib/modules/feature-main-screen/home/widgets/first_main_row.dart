@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
 import '../../../common-core/responsive.dart';
+import '../../../utils/launch_utils.dart';
 
 class MainTop extends StatelessWidget {
   const MainTop({
@@ -34,10 +35,11 @@ class MainTop extends StatelessWidget {
                     if (isMobile(context))
                       Padding(
                         padding: const EdgeInsets.only(bottom: 16.0),
-                        child: SizedBox(
-                            height: size.height * 0.3,
-                            width: size.height * 0.3,
-                            child: _buildImage1(context)),
+                        child: Container(
+                          constraints: BoxConstraints(minHeight: 300),
+                          height: size.height * 0.3,
+                          child: _buildImage1(context),
+                        ),
                       ),
                     Text(
                       S.of(context).main_title,
@@ -51,7 +53,7 @@ class MainTop extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     Text(
-                      "Управление временем — целая наука. Тайм - менеджмент — это техники и методы для управления временем. Это самоорганизация и управление собой. Тайм-менеджмент помогает человеку или компании планировать время и экономить ресурсы. Попробуй планировать вместе с приложением",
+                      S.of(context).main_subtitle,
                       textAlign: isMobile(context)
                           ? TextAlign.center
                           : TextAlign.start,
@@ -65,13 +67,21 @@ class MainTop extends StatelessWidget {
                       runSpacing: 10,
                       children: <Widget>[
                         _buildStoreButton(
-                          context,
-                          "assets/images/get_on_google.png",
+                          context: context,
+                          path: "assets/images/get_on_google.png",
+                          onClick: () {
+                            launchURL(
+                                "https://play.google.com/store/apps/details?id=com.boyma.planberry");
+                          },
                         ),
                         const SizedBox(width: 10),
                         _buildStoreButton(
-                          context,
-                          "assets/images/get_on_appstore.png",
+                          context: context,
+                          path: "assets/images/get_on_appstore.png",
+                          onClick: () {
+                            launchURL(
+                                "https://apps.apple.com/us/app/planberry/id1592919442?platform=iphone");
+                          },
                         ),
                       ],
                     )
@@ -95,43 +105,46 @@ class MainTop extends StatelessWidget {
   Widget _buildImage1(BuildContext context) {
     return AnimateIfVisible(
       key: const Key('_buildImage1'),
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
       builder: (
-          BuildContext context,
-          Animation<double> animation,
-          ) =>
+        BuildContext context,
+        Animation<double> animation,
+      ) =>
           SlideTransition(
-            position: Tween<Offset>(
-              begin: Offset(0, 0.1),
-              end: Offset.zero,
-            ).animate(animation),
-            child: FadeTransition(
-              opacity: Tween<double>(
-                begin: 0,
-                end: 1,
-              ).animate(animation),
-              child: Image.asset(
-                "assets/images/screens.png",
-                fit: (isDesktop(context) || isTab(context))
-                    ? BoxFit.fitWidth
-                    : BoxFit.fitHeight,
-              ),
-            ),
+        position: Tween<Offset>(
+          begin: const Offset(0, 0.1),
+          end: Offset.zero,
+        ).animate(animation),
+        child: FadeTransition(
+          opacity: Tween<double>(
+            begin: 0,
+            end: 1,
+          ).animate(animation),
+          child: Image.asset(
+            "assets/images/screens.png",
+            fit: (isDesktop(context) || isTab(context))
+                ? BoxFit.fitWidth
+                : BoxFit.fitHeight,
           ),
-    );
-    return Image.asset(
-      "assets/images/screens.png",
-      fit: (isDesktop(context) || isTab(context))
-          ? BoxFit.fitWidth
-          : BoxFit.fitHeight,
+        ),
+      ),
     );
   }
 
-  _buildStoreButton(BuildContext context, String path) {
-    return Image.asset(
-      path,
-      fit: BoxFit.fitWidth,
-      width: isMobile(context) ? 150 : 220,
+  _buildStoreButton({
+    required BuildContext context,
+    required String path,
+    required Function onClick,
+  }) {
+    return InkWell(
+      onTap: () {
+        onClick();
+      },
+      child: Image.asset(
+        path,
+        fit: BoxFit.fitWidth,
+        width: isMobile(context) ? 150 : 220,
+      ),
     );
   }
 }

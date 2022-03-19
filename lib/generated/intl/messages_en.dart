@@ -24,21 +24,30 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "contacts": MessageLookupByLibrary.simpleMessage("Contacts"),
         "copyright": MessageLookupByLibrary.simpleMessage("All Right Reserved"),
-        "creative_design":
-            MessageLookupByLibrary.simpleMessage("Creative design"),
-        "fast_support": MessageLookupByLibrary.simpleMessage("Fast Support"),
+        "creative_design": MessageLookupByLibrary.simpleMessage("Design"),
+        "creative_design_desc": MessageLookupByLibrary.simpleMessage(
+            "So that nothing distracts, we made a minimalistic interface"),
+        "fast_support":
+            MessageLookupByLibrary.simpleMessage("Support and care"),
+        "fast_support_desc": MessageLookupByLibrary.simpleMessage(
+            "Rest assured that you can contact us at any time. We will quickly and gladly answer all your questions - via chat and e-mail"),
         "flexible_setup":
             MessageLookupByLibrary.simpleMessage("Flexible setup"),
+        "flexible_setup_desc": MessageLookupByLibrary.simpleMessage(
+            "Focus on your own needs - adjust the parameters, set your benchmarks, be free to choose"),
         "lang_desc": MessageLookupByLibrary.simpleMessage("English"),
         "main_subtitle": MessageLookupByLibrary.simpleMessage(
-            "The application allows you to effectively manage time"),
-        "main_title":
-            MessageLookupByLibrary.simpleMessage("Effective time management"),
+            "Every modern person knows how important it is to learn how to manage your time. Time management helps us save resources, identify our own needs, prioritize, and keep focus on what matters most. Our application was created to help you structure your time and spend it usefully."),
+        "main_title": MessageLookupByLibrary.simpleMessage("Manage your time"),
+        "review_subtitle":
+            MessageLookupByLibrary.simpleMessage("Manage your time well"),
         "review_title": MessageLookupByLibrary.simpleMessage(
-            "Discover all the features of the app"),
+            "Take advantage of all the features of the app"),
         "theme_dark": MessageLookupByLibrary.simpleMessage("Dark"),
         "theme_light": MessageLookupByLibrary.simpleMessage("Light"),
         "visual_statistics":
-            MessageLookupByLibrary.simpleMessage("Visual statistics")
+            MessageLookupByLibrary.simpleMessage("Visual statistics"),
+        "visual_statistics_desc": MessageLookupByLibrary.simpleMessage(
+            "See results in real time, make quick changes - make sure you\'re on the right track")
       };
 }

@@ -11,23 +11,25 @@ class SecondMainRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //color: Colors.grey,
       width: double.infinity,
       padding: const EdgeInsets.all(8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            S.of(context).review_title,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: isDesktop(context) ? 26 : 20,
-              fontWeight: FontWeight.w800,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              S.of(context).review_title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: isDesktop(context) ? 26 : 20,
+                fontWeight: FontWeight.w800,
+              ),
             ),
           ),
-          const SizedBox(height: 2),
+          const SizedBox(height: 8),
           Text(
-            "Жизнь станет проще с нашим приложением",
+            S.of(context).review_subtitle,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: isDesktop(context) ? 20 : 16,
@@ -43,22 +45,22 @@ class SecondMainRow extends StatelessWidget {
               ItemFuncView(
                 icon: _buildMatIcon(context, Icons.edit),
                 title: S.of(context).creative_design,
-                subtitle: "Привлекательный дизайн, который радует глаз. Чистый и минималистичный интерфейс для удобного взаимодействия с пользователем.",
+                subtitle: S.of(context).creative_design_desc,
               ),
               ItemFuncView(
                 icon: _buildMatIcon(context, Icons.insert_chart),
                 title: S.of(context).visual_statistics,
-                subtitle: "Смотри, как твои цифры растут в режиме реального времени. Вноси быстрые изменения и смотри на результаты с уверенностью, что делаешь все правильно.",
+                subtitle: S.of(context).visual_statistics_desc,
               ),
               ItemFuncView(
                 icon: _buildMatIcon(context, Icons.settings),
                 title: S.of(context).flexible_setup,
-                subtitle: "Установи свои собственные настройки в соответствии с твоими потребностями. Настрой параметры и установи свои собственные ориентиры для работы.",
+                subtitle: S.of(context).flexible_setup_desc,
               ),
               ItemFuncView(
                 icon: _buildMatIcon(context, Icons.local_phone),
                 title: S.of(context).fast_support,
-                subtitle: "Свяжись с нами в любое время, мы будем рады ответить на все твои вопросы. Быстрые ответы в чате и по электронной почте.",
+                subtitle: S.of(context).fast_support_desc,
               ),
             ],
           )
@@ -106,9 +108,7 @@ class ItemFuncView extends StatelessWidget {
 
   Widget _buildContent(BuildContext context) {
     return Container(
-      //color: Colors.greenAccent,
       width: 330,
-      //constraints: const BoxConstraints(maxWidth: 400),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 36),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -127,8 +127,8 @@ class ItemFuncView extends StatelessWidget {
           const SizedBox(height: 16),
           subtitle.isNotEmpty
               ? Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Text(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text(
                     subtitle,
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -136,7 +136,7 @@ class ItemFuncView extends StatelessWidget {
                       fontWeight: FontWeight.w300,
                     ),
                   ),
-              )
+                )
               : Container(),
         ],
       ),
