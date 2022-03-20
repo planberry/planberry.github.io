@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../generated/l10n.dart';
+import '../../../app-core/app_bloc/app_bloc.dart';
+import '../../../utils/launch_utils.dart';
+import '../../constants.dart';
 import '../../responsive.dart';
-import 'menu_item.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -28,28 +32,7 @@ class Header extends StatelessWidget {
           const Spacer(),
           if (!isMobile(context))
             Row(
-              children: [
-                NavItem(
-                  title: 'Home',
-                  tapEvent: () {},
-                ),
-                NavItem(
-                  title: 'Donate',
-                  tapEvent: () {},
-                ),
-                NavItem(
-                  title: 'Contact Us',
-                  tapEvent: () {},
-                ),
-                NavItem(
-                  title: 'Login',
-                  tapEvent: () {},
-                ),
-                NavItem(
-                  title: 'Shop',
-                  tapEvent: () {},
-                ),
-              ],
+              children: [...menuItems(context)],
             ),
           if (isMobile(context))
             IconButton(
@@ -58,6 +41,78 @@ class Header extends StatelessWidget {
                   Scaffold.of(context).openEndDrawer();
                 })
         ],
+      ),
+    );
+  }
+}
+
+List<Widget> menuItems(BuildContext context) => [
+      NavItem(
+        title: S.of(context).our_channel,
+        tapEvent: () {
+          launchURL("https://t.me/planberry");
+        },
+      ),
+      NavItem(
+        title: S.of(context).our_email,
+        tapEvent: () {
+          launchEmailSender("planberry.contact.center@gmail.com");
+        },
+      ),
+      NavItem(
+        title: S.of(context).lang_desc,
+        tapEvent: () {
+          BlocProvider.of<AppBloc>(context).swapLanguage();
+        },
+      ),
+    ];
+
+class SideMenu extends StatelessWidget {
+  const SideMenu({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: double.infinity,
+      color: Colors.white,
+      child: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              ...menuItems(context).map(
+                (e) => Padding(
+                  padding: const EdgeInsets.only(top: 16),
+                  child: e,
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class NavItem extends StatelessWidget {
+  const NavItem({Key? key, required this.title, required this.tapEvent})
+      : super(key: key);
+
+  final String title;
+  final GestureTapCallback tapEvent;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: tapEvent,
+      hoverColor: Colors.transparent,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15),
+        child: Text(
+          title,
+          style:
+              const TextStyle(color: kTextColor, fontWeight: FontWeight.w300),
+        ),
       ),
     );
   }
